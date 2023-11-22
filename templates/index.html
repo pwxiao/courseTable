@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="mdui-theme-auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="Description" content="课程表" />
+  <title>课程表</title>  
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2.0.2/mdui.css">
+  <script src="https://unpkg.com/mdui@2.0.2/mdui.global.js"></script>
+</head>
+
+<body>
+
+    <mdui-tabs value="week-{{day}}" full-width>
+        <mdui-tab value="week-1">星期一</mdui-tab>
+        <mdui-tab value="week-2">星期二</mdui-tab>
+        <mdui-tab value="week-3">星期三</mdui-tab>
+        <mdui-tab value="week-4">星期四</mdui-tab>
+        <mdui-tab value="week-5">星期五</mdui-tab>
+        <mdui-tab value="week-6">星期六</mdui-tab>
+
+        <mdui-tab-panel slot="panel" value="week-1">
+          <mdui-list>
+            <mdui-list-subheader>课程</mdui-list-subheader>
+            {% for data in datas[0][0] %}
+        
+            <mdui-list-item active headline={{data.course_name}} description={{data.teacher}}&nbsp;{{data.address}}>
+              <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}} 节</mdui-button>
+            </mdui-list-item>
+           
+            
+            {% endfor %}
+          </mdui-list>
+        </mdui-tab-panel>
+        <mdui-tab-panel slot="panel" value="week-2">
+          <mdui-list>
+            <mdui-list-subheader>课程</mdui-list-subheader>
+            {% for data in datas[1][0] %}
+        
+            <mdui-list-item active headline={{data.course_name}} description={{data.teacher}}&nbsp;{{data.address}}>
+              <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}} 节</mdui-button>
+            </mdui-list-item>
+           
+            
+            {% endfor %}
+          </mdui-list>
+        </mdui-tab-panel>
+        <mdui-tab-panel slot="panel" value="week-3">
+          <mdui-list>
+            <mdui-list-subheader>课程</mdui-list-subheader>
+            {% for data in datas[2][0] %}
+        
+            <mdui-list-item active headline={{data.course_name}} description={{data.teacher}}&nbsp;{{data.address}}>
+              <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}} 节</mdui-button>
+            </mdui-list-item>
+           
+            
+            {% endfor %}
+          </mdui-list>
+        </mdui-tab-panel>
+
+        <mdui-tab-panel slot="panel" value="week-4">
+          <mdui-list>
+            <mdui-list-subheader>课程</mdui-list-subheader>
+            {% for data in datas[3][0] %}
+        
+            <mdui-list-item active headline={{data.course_name}} description={{data.teacher}}&nbsp;{{data.address}}>
+              <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}} 节</mdui-button>
+            </mdui-list-item>
+           
+            
+            {% endfor %}
+          </mdui-list>
+        </mdui-tab-panel>
+
+        <mdui-tab-panel slot="panel" value="week-5">
+          <mdui-list>
+            <mdui-list-subheader>课程</mdui-list-subheader>
+            {% for data in datas[4][0] %}
+        
+            <mdui-list-item active headline={{data.course_name}} description={{data.teacher}}&nbsp;{{data.address}}>
+              <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}} 节</mdui-button>
+            </mdui-list-item>
+           
+            
+            {% endfor %}
+          </mdui-list>
+        </mdui-tab-panel>
+
+        <mdui-tab-panel slot="panel" value="week-6">
+          <mdui-list>
+            <mdui-list-subheader>课程</mdui-list-subheader>
+            {% for data in datas[5][0] %}
+        
+            <mdui-list-item active headline={{data.course_name}} description={{data.teacher}}&nbsp;{{data.address}}>
+              <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}} 节</mdui-button>
+            </mdui-list-item>
+           
+            
+            {% endfor %}
+          </mdui-list>
+        </mdui-tab-panel>
+
+        <mdui-tab-panel slot="panel" value="week-7">
+          <mdui-list>
+            <mdui-list-subheader>课程</mdui-list-subheader>
+            {% for data in datas[6][0] %}
+        
+            <mdui-list-item active headline={{data.course_name}} description={{data.teacher}}&nbsp;{{data.address}}>
+              <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}} 节</mdui-button>
+            </mdui-list-item>
+           
+            
+            {% endfor %}
+          </mdui-list>
+        </mdui-tab-panel>
+      </mdui-tabs>
+
+  
+  <!-- <mdui-button class="btn"></mdui-button> -->
+  
+  <script>
+    document.querySelector('.btn').addEventListener('click', () => {
+      mdui.snackbar({ message: '点击了按钮' });
+    });
+  </script>
+</body>
+
+</html>

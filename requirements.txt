@@ -1,0 +1,3 @@
+Flask
+requests
+--extra-index-url https://www.goratings.org/zh/
