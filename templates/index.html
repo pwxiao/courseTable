@@ -13,6 +13,11 @@
 
 <body>
 
+  <mdui-top-app-bar style="position: relative;">
+    <mdui-top-app-bar-title>课程表</mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+  </mdui-top-app-bar>
+
     <mdui-tabs value="week-{{day}}" full-width>
         <mdui-tab value="week-1">星期一</mdui-tab>
         <mdui-tab value="week-2">星期二</mdui-tab>
@@ -119,11 +124,12 @@
       </mdui-tabs>
 
   
-  <!-- <mdui-button class="btn"></mdui-button> -->
-  
+  <mdui-button class="btn" full-width>  <span id="jinrishici-sentence">....</span></mdui-button>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
   <script>
     document.querySelector('.btn').addEventListener('click', () => {
-      mdui.snackbar({ message: '点击了按钮' });
+      mdui.snackbar({ message: '好好好' });
     });
   </script>
 </body>
