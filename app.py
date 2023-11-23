@@ -35,6 +35,11 @@ def work():
     res = json.loads(data)
     course_list = res["data"]
 
+    fina = {
+        "weekday":today,
+        "data":[]
+        }
+
     tables = [[] for _ in range(7)]
     # 遍历课程列表      
 
@@ -66,14 +71,16 @@ def work():
                 sorted_inner_tables = sorted(innerTable,key=lambda d:d['start_jie'])
             
         tables[i-1].append(sorted_inner_tables)
+    fina["data"] = tables
             
-    return tables
+    return fina
 
 
 @app.route('/')
 def main():
     data = work()
-    return render_template("index.html",datas = data,day=today)
+    fina_res = json.dumps(data,ensure_ascii=False)
+    return fina_res
 
 
 if __name__ == '__main__':
