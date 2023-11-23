@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Elements</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/mdui@2.0.2/mdui.css">
+    <script src="https://unpkg.com/mdui@2.0.2/mdui.global.js"></script>
+</head>
+
+<body>
+
+    <mdui-top-app-bar style="position: relative;">
+        <mdui-top-app-bar-title>课程表</mdui-top-app-bar-title>
+        <div style="flex-grow: 1"></div>
+    </mdui-top-app-bar>
+
+   
+        <mdui-tabs id="tabs" value="week-1" full-width>
+
+            <mdui-tab value="week-1">星期一</mdui-tab>
+            <mdui-tab value="week-2">星期二</mdui-tab>
+            <mdui-tab value="week-3">星期三</mdui-tab>
+            <mdui-tab value="week-4">星期四</mdui-tab>
+            <mdui-tab value="week-5">星期五</mdui-tab>
+            <mdui-tab value="week-6">星期六</mdui-tab>
+
+            <mdui-tab-panel slot="panel" value="week-1">
+                <mdui-list>
+                    <mdui-list-subheader>课程</mdui-list-subheader>
+                    <div id="app1">
+                        <div v-for="data in items" :key="data.id">
+
+                            <mdui-list-item active :headline="data.course_name" :description=" ' ' + data.address">
+                                <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}}
+                                    节</mdui-button>
+                            </mdui-list-item>
+
+                        </div>
+
+                    </div>
+                </mdui-list>
+            </mdui-tab-panel>
+            <mdui-tab-panel slot="panel" value="week-2">
+                <mdui-list>
+                    <mdui-list-subheader>课程</mdui-list-subheader>
+                    <div id="app2">
+                        <div v-for="data in items" :key="data.id">
+
+                            <mdui-list-item active :headline="data.course_name" :description=" ' ' + data.address">
+                                <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}}
+                                    节</mdui-button>
+                            </mdui-list-item>
+
+                        </div>
+
+                    </div>
+                </mdui-list>
+            </mdui-tab-panel>
+            <mdui-tab-panel slot="panel" value="week-3">
+                <mdui-list>
+                    <mdui-list-subheader>课程</mdui-list-subheader>
+                    <div id="app3">
+                        <div v-for="data in items" :key="data.id">
+
+                            <mdui-list-item active :headline="data.course_name" :description=" ' ' + data.address">
+                                <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}}
+                                    节</mdui-button>
+                            </mdui-list-item>
+
+                        </div>
+
+                    </div>
+                </mdui-list>
+            </mdui-tab-panel>
+
+            <mdui-tab-panel slot="panel" value="week-4">
+                <mdui-list>
+                    <mdui-list-subheader>课程</mdui-list-subheader>
+                    <div id="app4">
+                        <div v-for="data in items" :key="data.id">
+
+                            <mdui-list-item active :headline="data.course_name" :description=" ' ' + data.address">
+                                <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}}
+                                    节</mdui-button>
+                            </mdui-list-item>
+
+                        </div>
+
+                    </div>
+                </mdui-list>
+            </mdui-tab-panel>
+
+            <mdui-tab-panel slot="panel" value="week-5">
+                <mdui-list>
+                    <mdui-list-subheader>课程</mdui-list-subheader>
+                    <div id="app5">
+                        <div v-for="data in items" :key="data.id">
+
+                            <mdui-list-item active :headline="data.course_name" :description=" ' ' + data.address">
+                                <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}}
+                                    节</mdui-button>
+                            </mdui-list-item>
+
+                        </div>
+
+                    </div>
+                </mdui-list>
+            </mdui-tab-panel>
+
+            <!-- <mdui-tab-panel slot="panel" value="week-6">
+            <mdui-list>
+                <mdui-list-subheader>课程</mdui-list-subheader>
+                {% for data in datas[5][0] %}
+
+                <mdui-list-item active headline={{data.course_name}} description={{data.teacher}}&nbsp;{{data.address}}>
+                    <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}} 节</mdui-button>
+                </mdui-list-item>
+
+
+                {% endfor %}
+            </mdui-list>
+        </mdui-tab-panel> -->
+
+            <mdui-tab-panel slot="panel" value="week-6">
+                <mdui-list>
+                    <mdui-list-subheader>课程</mdui-list-subheader>
+
+
+                    <div id="app6">
+                        <div v-for="data in items" :key="data.id">
+
+                            <mdui-list-item active :headline="data.course_name" :description=" ' ' + data.address">
+                                <mdui-button slot="end-icon">{{data.start_jie}} - {{data.end_jie}}
+                                    节</mdui-button>
+                            </mdui-list-item>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+                </mdui-list>
+            </mdui-tab-panel>
+
+
+        </mdui-tabs>
+
+    <script>
+        // JSON 数据
+        var jsonData = [[[{ 'course_name': '大学物理Ⅰ（下）', 'address': '天工南103', 'start_jie': 1, 'end_jie': 2, 'week': 1, 'start_week': 2, 'end_week': 13 }, { 'course_name': '大学英语( 三)', 'address': '天工南107', 'start_jie': 3, 'end_jie': 4, 'week': 1, 'start_week': 2, 'end_week': 13 }, { 'course_name': '面向对象软件设计', 'address': '天工南204', 'start_jie': 5, 'end_jie': 6, 'week': 1, 'start_week': 11, 'end_week': 18 }, { 'course_name': '毛泽东思想和中国特色社会主义理论体系概论', 'address': '天工203', 'start_jie': 7, 'end_jie': 8, 'week': 1, 'start_week': 2, 'end_week': 14 }, { 'course_name': '智能精准开采概论', 'address': '明理北103', 'start_jie': 10, 'end_jie': 11, 'week': 1, 'start_week': 10, 'end_week': 13 }]], [[{ 'course_name': '数字逻辑', 'address': '明理102', 'start_jie': 1, 'end_jie': 2, 'week': 2, 'start_week': 10, 'end_week': 19 }, { 'course_name': '数据结构', 'address': '天工南406', 'start_jie': 3, 'end_jie': 4, 'week': 2, 'start_week': 2, 'end_week': 13 }, { 'course_name': '模拟电子技术', 'address': '天工南214', 'start_jie': 5, 'end_jie': 6, 'week': 2, 'start_week': 11, 'end_week': 20 }, { 'course_name': '概率论与数理统计', 'address': '明理103', 'start_jie': 7, 'end_jie': 8, 'week': 2, 'start_week': 13, 'end_week': 20 }]], [[{ 'course_name': '大学物理Ⅰ（下）', 'address': '天工南103', 'start_jie': 3, 'end_jie': 4, 'week': 3, 'start_week': 2, 'end_week': 13 }, { 'course_name': '毛泽东思想和中国特色社会主义理论体系概论', 'address': '天工203', 'start_jie': 5, 'end_jie': 6, 'week': 3, 'start_week': 3, 'end_week': 13 }, { 'course_name': '概率论与数理统计', 'address': '明理103', 'start_jie': 7, 'end_jie': 8, 'week': 3, 'start_week': 13, 'end_week': 20 }, { 'course_name': '形势与政策(三)', 'address': '天工103', 'start_jie': 10, 'end_jie': 11, 'week': 3, 'start_week': 10, 'end_week': 14 }]], [[{ 'course_name': '大学英语(三)', 'address': '天工南107', 'start_jie': 1, 'end_jie': 2, 'week': 4, 'start_week': 2, 'end_week': 13 }, { 'course_name': '数据结构', 'address': '天工南406', 'start_jie': 3, 'end_jie': 4, 'week': 4, 'start_week': 2, 'end_week': 13 }, { 'course_name': '面向对象软件设计', 'address': '天工南212', 'start_jie': 5, 'end_jie': 6, 'week': 4, 'start_week': 11, 'end_week': 18 }, { 'course_name': '模拟电子技术', 'address': '天工南214', 'start_jie': 7, 'end_jie': 8, 'week': 4, 'start_week': 11, 'end_week': 20 }]], [[{ 'course_name': '数字逻辑', 'address': '明理102', 'start_jie': 1, 'end_jie': 2, 'week': 5, 'start_week': 10, 'end_week': 19 }, { 'course_name': '概率论与数理统计', 'address': '明理103', 'start_jie': 5, 'end_jie': 6, 'week': 5, 'start_week': 13, 'end_week': 20 }]], [[]], [[]]]
+
+        var weekday = 2
+
+        function updateTabsValue() {
+    var currentDate = new Date();
+    var week = currentDate.getDay();
+    var value = 'week-' + week;
+
+    var tabs = document.getElementById('tabs');
+    tabs.setAttribute('value', value);
+  }
+
+  // 页面加载完成后更新 tabs 的值
+  window.addEventListener('load', updateTabsValue);
+
+        new Vue({
+            el: '#weekday',
+            data: {
+                day: weekday
+            }
+        });
+
+        // Vue.js 应用程序
+        new Vue({
+            el: '#app1',
+            data: {
+                items: jsonData[0][0]
+            }
+        });
+        new Vue({
+            el: '#app2',
+            data: {
+                items: jsonData[1][0]
+            }
+        });
+        new Vue({
+            el: '#app3',
+            data: {
+                items: jsonData[2][0]
+            }
+        });
+        new Vue({
+            el: '#app4',
+            data: {
+                items: jsonData[3][0]
+            }
+        });
+        new Vue({
+            el: '#app5',
+            data: {
+                items: jsonData[4][0]
+            }
+        });
+        new Vue({
+            el: '#app6',
+            data: {
+                items: jsonData[5][0]
+            }
+        });
+    </script>
+</body>
+
+</html>
